@@ -7,42 +7,49 @@ using System.Threading.Tasks;
 namespace actividad_parcial {
     internal class promedio {
 
+        private double[] valores;
+        //public double num;
+        int contador;
+        private double total;
 
-        public double num;
-        public double contador;
-        public double acum;
 
-        
+        public promedio()
+        {
+            valores = new double[100];
+            contador = 0;
 
-        public void IngresarNum(double num) {
+        }
 
-            this.num = num;
+        public void IngresarNum(double valor) {
+
+            total += valor;
+            valores[contador++] = valor;
             
         }
 
-
-        
-        public double CalcularPromedio(double num) 
+        public double CalcularPromedio(double valor)
         {
 
-            
-            return acum / contador;
+            double total = 0;
+            for (int n = 0; n < contador; n++)
+            {
 
+                total += valores[n];
+            } 
 
+            double promedio = 0;
+
+            if (contador > 0) 
+                
+            {
+                promedio = total / contador;
+               
+            } 
+             return promedio;
         }
 
 
-        public void promedioo(double num) {
 
-
-            if(num > 0) {
-
-                contador++;
-                acum += num;
-
-            }
-
-        }
 
     }
 }

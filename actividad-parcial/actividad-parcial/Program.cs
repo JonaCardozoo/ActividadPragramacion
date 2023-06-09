@@ -11,56 +11,59 @@ namespace actividad_parcial {
 
             promedio p = new promedio();
 
-            double num = 0;
+            double valor = 0;
             int op=0;
-            while(op != -1) 
-                
+
+            do
+
             {
-                
+
                 Console.WriteLine("\t1- Agregar numero");
                 Console.WriteLine("\t2- Calcular Promedio");
                 Console.WriteLine("\t3- Salir");
                 op = Convert.ToInt32(Console.ReadLine());
-                Console.Clear();    
-                
-                switch(op) {
+                Console.Clear();
 
-                case 1:
-                    
-                    
+                switch (op)
 
-                    while(num != -1) 
-                        
-                    {
-                        
+                {
+
+                    case 1:
+
+
                         Console.WriteLine("Ingrese los numeros (corte con -1)");
-                        num = Convert.ToDouble(Console.ReadLine());
-                        p.IngresarNum(num);
-                        p.promedioo(num);
-                    }
+                        valor = Convert.ToDouble(Console.ReadLine());
+                        p.IngresarNum(valor);
 
-                    
-                    break;
 
-                case 2:
 
-                    
+                        Console.Clear();
 
-                    p.CalcularPromedio(num);
-                    Console.WriteLine("El promedio es de: {0:f2}", p.CalcularPromedio(num));
 
-                    break;
-                
-                
+                        break;
+
+                    case 2:
+
+
+
+                        //p.CalcularPromedio(valor);
+                        Console.WriteLine("El promedio es de: {0}", p.CalcularPromedio(valor));
+
+
+
+                        break;
+
+
+                    case 3:
+
+                        
+                        break;
+
+
                 }
-                
-                
-                
 
 
-
-
-            }
+            } while (op != 3);
         }
     }
 }
